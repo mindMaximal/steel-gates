@@ -16,6 +16,8 @@
 body,
 html {
 	width: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 body {
@@ -35,6 +37,15 @@ body {
 		&:required:valid {
 			border-color: green;
 		}
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
 	}
 }
 
@@ -1028,7 +1039,7 @@ h1, h2, h3, h4, h5 {
 
 @include media-breakpoint-down(sm) {
 	.contact {
-
+		
 		&__link {
 			font-size: 14px;
 		}

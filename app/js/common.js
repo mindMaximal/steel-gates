@@ -149,4 +149,25 @@ function ready() {
     document.querySelectorAll('.form').forEach(function(element) {
         element.addEventListener('submit', submitHandler);
     });
+
+    //Sliders 
+    if (document.querySelector('.gallery__slider')) {
+        var gallerySlider = new Glide('.gallery__slider', {
+            type: 'carousel',
+            focusAt: 'center',
+            animationDuration: 500,
+            perView: 3,
+            touchRatio: 1,
+            perTouch: 1,
+			breakpoints: {
+				991: {
+				  perView: 2
+				},
+				767: {
+				  perView: 1
+				}
+			  }
+        });
+        gallerySlider.mount();
+    }
 }

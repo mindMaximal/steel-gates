@@ -23,6 +23,10 @@
 		&--garage {
 			max-width: 860px;
 		}
+
+		&--automatic {
+			max-width: 860px;
+		}
 	}
 
 	&__wrapper {
@@ -40,6 +44,13 @@
 		background-repeat: no-repeat;
 	}
 
+	&--automatic {
+		background-image: url('../img/home/bg--automatic.jpg');
+		background-position: right center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
 	&__text {
 		margin-top: 45px;
 		font-size: 24px;
@@ -51,6 +62,10 @@
 		}
 
 		&--garage {
+			max-width: 700px;
+		}
+
+		&--automatic {
 			max-width: 700px;
 		}
 	}
@@ -578,6 +593,12 @@
 	}
 }
 
+@include media-breakpoint-down(sm) {
+	.contacts {
+		padding: 50px 0 30px 0;
+	}
+}
+
 .map {
 	height: 450px;
 
@@ -791,5 +812,271 @@
 @include media-breakpoint-down(sm) {
 	.garage-door {
 		
+	}
+}
+
+.works {
+
+	&__subtitle {
+		font-weight: bold;
+		font-size: 42px;
+		line-height: 36px;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.works {
+
+		&__subtitle {
+			font-size: 36px;
+		}
+
+		&__block {
+			flex-direction: row;
+			align-items: center;
+
+			&--left {
+
+				.works__img {
+					order: 1;
+					padding-right: 10px;
+				}
+
+				.works__info {
+					padding-left: 10px;
+					order: 2;
+				}
+			}
+
+			&--right {
+
+				.works__img {
+					order: 2;
+					padding-left: 10px;
+				}
+
+				.works__info {
+					order: 1;
+					padding-right: 10px;
+				}
+			}
+		}
+
+		&__info {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.works {
+
+		&__subtitle {
+			font-size: 30px;
+		}
+
+		&__block {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 20px 0 10px 0;
+
+			&--left {
+
+				.works__img {
+					order: 1;
+					padding-right: 0px;
+				}
+
+				.works__info {
+					padding-left: 0px;
+					order: 2;
+				}
+			}
+
+			&--right {
+
+				.works__img {
+					order: 1;
+					padding-left: 0px;
+				}
+
+				.works__info {
+					order: 2;
+					padding-right: 0px;
+				}
+			}
+		}
+
+		&__info {
+			margin-bottom: 0;
+		}
+
+		&__img {
+			margin: 20px 0 15px 0;
+		}
+	}
+}
+
+.gallery {
+
+	&__slider {
+		margin-top: 60px;
+	}
+
+	&__slides {
+		padding: 50px 0;
+	}
+
+	&__slide {
+		position: relative;
+		border-radius: 3px;
+		overflow: hidden;
+		z-index: 1;
+		transition: .3s;
+	}
+
+	&__filter {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transition: .2s;
+		background-color: rgba($white, .55);
+	}
+
+	&__control {
+		margin-top: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__bullets {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__bullet {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		outline: none;
+		margin: 0 10px;
+		background-color: transparent;
+		border: 1px solid $btn;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: $btn;
+			border: 1px solid $btn;
+		}
+	}
+
+	&__arrow {
+		margin: 0 5px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			outline: none;
+			border: none;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.gallery {
+		
+		&__slider {
+			margin-top: 20px;
+		}
+
+		&__slides {
+			padding: 0;
+		}
+
+		&__control {
+			margin-top: 30px;
+		}
+	}	
+}
+
+.glide {
+
+	&__slide {
+
+		&--active {
+			transform: scale(1.3);
+			z-index: 2;
+
+			&::after {
+				background-color: rgba($white, 0);
+				height: 0;
+			}
+
+			.gallery__filter {
+				background-color: rgba($white, 0);
+			}
+		}
+	}
+
+	&__bullet {
+
+		&--active {
+			background-color: $btn;
+			border: 1px solid $btn;
+			box-shadow: 0px 0px 10px 5px rgba($btn, 0.45);
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.glide {
+
+		&__slide {
+
+			.gallery__filter {
+				background-color: rgba($white, 0);
+			}
+	
+			&--active {
+				transform: scale(1);
+			}
+		}
+	
+		&__bullet {
+	
+			&--active {
+				background-color: $btn;
+				border: 1px solid $btn;
+				box-shadow: 0px 0px 10px 5px rgba($btn, 0.45);
+			}
+		}
+	}
+	
+}
+
+.ready {
+	padding: 100px 0;
+
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__info {
+		width: 50%;
+	}
+
+	&__img {
+		width: 50%;
+		padding-left: 50px;
 	}
 }
