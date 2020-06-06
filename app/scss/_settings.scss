@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5 {
 	&--base {
 		text-transform: uppercase;
 		font-size: 42px;
-		line-height: 36px;
+		line-height: 60px;
 		font-weight: bold;
 	}
 }
@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5 {
 	padding: 35px 50px;
 
 	&__logo {
-		max-width: 300px;
+		max-width: 250px;
 	}
 
 	&__list {
@@ -438,7 +438,7 @@ h1, h2, h3, h4, h5 {
 
 		&--inner {
 			font-weight: 600;
-			font-size: 17px;
+			font-size: 14px;
 
 			&:hover,
 			&:focus {
@@ -448,7 +448,7 @@ h1, h2, h3, h4, h5 {
 
 		&--phone {
 			font-weight: 600;
-			font-size: 24px;
+			font-size: 20px;
 			transform: translateY(10px);
 
 			&:hover,
@@ -661,6 +661,8 @@ h1, h2, h3, h4, h5 {
 	}
 
 	&__list {
+		padding: 0;
+		margin: 0;
 		height: 80%;
 		display: flex;
 		flex-direction: column;
@@ -767,35 +769,73 @@ h1, h2, h3, h4, h5 {
 	&__img {
 		margin: 60px 0;
 	}
+
+	&__subtitle {
+		margin-bottom: 25px;
+	}
+
+	&__elem {
+
+		&--arrow {
+			position: relative;
+			padding-left: 15px;
+			list-style-type: none;
+			margin: 30px 0;
+	
+			&::before {
+				content: url('../img/icons/arrow-right-shadow.png');
+				position: absolute;
+				left: -10px;
+				top: -3px;
+				width: 7px;
+			}
+		}
+
+		&:last-of-type {
+			margin: 30px 0 0 0;
+		}
+
+		&--msmall {
+			margin: 5px 0;
+
+			&:last-of-type {
+				margin: 5px 0 0 0;
+			}
+		}		
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
 }
 
 @include media-breakpoint-down(md) {
 	.txt {
 
+		&__subtitle {
+			margin-bottom: 15px;
+		}
+
 		&__img {
 			margin: 20px 0;
 		}
+		
+		&--bordered {
+			padding: 15px 0;	
+		} 
 	}
 }
 
 @include media-breakpoint-down(sm) {
-	
-}
+	.txt {
 
-.elem {
+		&__subtitle {
+			margin-bottom: 10px;
+		}
 
-	&--arrow {
-		position: relative;
-		padding-left: 15px;
-		list-style-type: none;
-		margin: 30px 0;
-
-		&::before {
-			content: url('../img/icons/arrow-right-shadow.png');
-			position: absolute;
-			left: -10px;
-			top: -3px;
-			width: 7px;
+		&--bordered {
+			font-size: 14px;
 		}
 	}
 }
@@ -1039,7 +1079,7 @@ h1, h2, h3, h4, h5 {
 
 @include media-breakpoint-down(sm) {
 	.contact {
-		
+
 		&__link {
 			font-size: 14px;
 		}
@@ -1090,12 +1130,49 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+.half {
+	width: 50%;
 
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+}
 
+@include media-breakpoint-down(sm) {
+	.half {
+		width: 100%;
 
+		&__wrapper {
+			flex-direction: column;
+		}
+	}
+}
 
+.one-third {
+	width: 33%;
 
+	&__wrapper {
+		display: flex;
+		justify-content: flex-start;
+	}
+}
 
+@include media-breakpoint-down(md) {
+	.one-third {
+		width: 50%;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.one-third {
+		width: 100%;
+
+		&__wrapper {
+			flex-direction: column;
+		}
+	}
+}
 
 .popup {
 	width: 100%;
